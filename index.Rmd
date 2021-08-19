@@ -344,6 +344,32 @@ Summaries | `tar_stan_summary()` |
 
 ---
 
+## `tar_stan_mcmc()` 
+
+* Run the model once.
+* Create targets for draws, summaries, and HMC/NUTS diagnostics.
+
+```{r, eval = FALSE}
+tar_visnetwork()
+```
+
+![](./images/single-rep.png)
+
+---
+
+## `tar_stan_mcmc_rep_summary()`
+
+* Run the model multiple times in batches over many randomly-generated datasets.
+* Only return posterior summaries.
+
+```{r, eval = FALSE}
+tar_visnetwork()
+```
+
+![](./images/multi-rep.png)
+
+---
+
 ## Example: Bayesian longitudinal model for clinical trials
 
 <!--
