@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Target Markdown and stantargets for Bayesian model validation pipelines</title>
+    <title>stantargets and Target Markdown for Bayesian model validation pipelines</title>
     <meta charset="utf-8" />
     <meta name="author" content="Will Landau" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
@@ -12,7 +12,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Target Markdown and stantargets for Bayesian model validation pipelines
+# stantargets and Target Markdown for Bayesian model validation pipelines
 ### Will Landau
 
 ---
@@ -309,6 +309,21 @@ A bit of background: Stan is a probabilistic programming language for all kinds 
 
 ---
 
+## {stantargets}: target factories for Stan 
+
+* Closely follows the function interface of `cmdstanr`: &lt;https://mc-stan.org/cmdstanr/reference/index.html&gt;.
+
+Algorithm | Single-rep multi-output | Multi-rep single-output
+---|---|---
+MCMC | `tar_stan_mcmc()     ` | `tar_stan_mcmc_rep_draws()` `tar_stan_mcmc_rep_diagnostics()` `tar_stan_mcmc_rep_summary()`
+Gen. Qty. | `tar_stan_gq()` | `tar_stan_gq_rep_draws()`  `tar_stan_gq_rep_summary()`
+Variational | `tar_stan_vb()` | `tar_stan_vb_rep_draws()`  `tar_stan_vb_rep_summary()` 
+MLE  | `tar_stan_mle()` | `tar_stan_mle_rep_draws()`  `tar_stan_mle_rep_summary()`
+Compilation | `tar_stan_compile()` | 
+Summaries | `tar_stan_summary()` | 
+
+---
+
 ## Example: Bayesian longitudinal model for clinical trials
 
 &lt;!--
@@ -520,8 +535,8 @@ And coverage looks nominal. On average, 50% of the 50% posterior intervals cover
 
 Resource | Link
 ---|---
-Slides | &lt;https://wlandau.github.io/rmedicine2021-slides/&gt;
-Slide source | &lt;https://github.com/wlandau/rmedicine2021-slides&gt;
+Slides | &lt;https://wlandau.github.io/bayes-lund-2021/&gt;
+Slide source | &lt;https://github.com/wlandau/bayes-lund-2021&gt;
 Pipeline report | &lt;https://wlandau.github.io/rmedicine2021-pipeline/&gt;
 Pipeline source | &lt;https://github.com/wlandau/rmedicine2021-pipeline&gt;
 `targets` | &lt;https://docs.ropensci.org/targets/&gt;
@@ -545,7 +560,7 @@ These slides are publicly available, and so is the fully rendered version of the
 
 ???
 
-I would like to thank everyone who helped out with {targets} and its ecosystem, especially the folks listed here who helped make {stantargets} and Target Markdown possible. Thanks also to the R Medicine Program Committee for allowing me to speak, and thank you to everyone listening.
+I would like to thank everyone who helped out with {targets} and its ecosystem, especially the folks listed here who helped make {stantargets} and Target Markdown possible. Thanks also to the organizers of Bayes@Lund for allowing me to speak, and thank you to everyone listening.
 
 ---
 
